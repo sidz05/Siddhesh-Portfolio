@@ -1,0 +1,40 @@
+import React, { useEffect } from 'react';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import About from './components/About';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Achievements from './components/Achievements';
+import Experience from './components/Experience';
+import Certifications from './components/Certifications';
+import Contact from './components/Contact';
+import Footer from './components/Footer';
+import './utils/animations.css';
+
+function App() {
+  useEffect(() => {
+    // Update document title
+    document.title = "Siddhesh Patil | Portfolio";
+    
+    // Force dark mode
+    document.documentElement.classList.add('dark');
+    localStorage.setItem('darkMode', 'true');
+  }, []);
+
+  return (
+    <div className="font-sans bg-black text-white transition-colors duration-300">
+      <Navbar />
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Achievements />
+      <Experience />
+      <Certifications />
+      <Contact />
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
