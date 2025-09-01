@@ -23,33 +23,6 @@ interface Education {
 const Experience: React.FC = () => {
   const experienceRefs = useRef<(HTMLDivElement | null)[]>([]);
   
-  const education: Education[] = [
-    {
-      id: 'btech',
-      degree: 'Bachelor of Technology in Computer Science',
-      institution: 'Pimpri Chinchwad College of Engineering',
-      location: 'Pune',
-      period: 'November 2022 – June 2026',
-      grade: 'CGPA: 7.85 (out of 10)'
-    },
-    {
-      id: 'hsc',
-      degree: 'Higher Secondary Certificate (HSC) – Science',
-      institution: 'The New College',
-      location: 'Kolhapur',
-      period: '2020 – 2022',
-      grade: '76.17%'
-    },
-    {
-      id: 'ssc',
-      degree: 'Secondary School Certificate (SSC)',
-      institution: 'D.C. Narke Vidyaniketan',
-      location: 'Kolhapur',
-      period: '2019 – 2020',
-      grade: '96.20%'
-    }
-  ];
-
   const experiences: Experience[] = [
     {
       id: 'iste',
@@ -76,6 +49,33 @@ const Experience: React.FC = () => {
     },
   ];
 
+  const education: Education[] = [
+    {
+      id: 'btech',
+      degree: 'Bachelor of Technology in Computer Science',
+      institution: 'Pimpri Chinchwad College of Engineering',
+      location: 'Pune',
+      period: 'November 2022 – June 2026',
+      grade: 'CGPA: 7.85 (out of 10)'
+    },
+    {
+      id: 'hsc',
+      degree: 'Higher Secondary Certificate (HSC) – Science',
+      institution: 'The New College',
+      location: 'Kolhapur',
+      period: '2020 – 2022',
+      grade: '76.17%'
+    },
+    {
+      id: 'ssc',
+      degree: 'Secondary School Certificate (SSC)',
+      institution: 'D.C. Narke Vidyaniketan',
+      location: 'Kolhapur',
+      period: '2019 – 2020',
+      grade: '96.20%'
+    }
+  ];
+  
   useEffect(() => {
     const observerOptions = {
       threshold: 0.2,
@@ -103,44 +103,14 @@ const Experience: React.FC = () => {
   }, []);
 
   return (
-    <section id="experience" className="py-20 bg-black">
+    <section id="experience" className="py-20 bg-gray-900">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-4 text-white">Education & Experience</h2>
+        <h2 className="text-4xl font-bold text-center mb-4 text-white">
+          Experience
+        </h2>
         <div className="w-20 h-1 bg-teal-500 mx-auto mb-12"></div>
         
         <div className="max-w-4xl mx-auto">
-          {/* Education Section First */}
-          <div className="mb-16 bg-gray-900 rounded-xl p-8 border border-gray-700 hover:border-teal-500 transition-all duration-300">
-            <h3 className="text-3xl font-bold text-white mb-8 text-center">Education</h3>
-            
-            <div className="space-y-8">
-              {education.map((edu) => (
-                <div key={edu.id} className="bg-gray-800 rounded-lg p-6 border-l-4 border-teal-500 hover:bg-gray-750 transition-all duration-300">
-                  <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-3">
-                    <h4 className="text-xl font-bold text-white mb-2 sm:mb-0">
-                      {edu.degree}
-                    </h4>
-                    <span className="text-teal-400 font-semibold text-sm bg-teal-500/10 px-3 py-1 rounded-full border border-teal-500/20">{edu.period}</span>
-                  </div>
-                  <p className="text-gray-300 mb-2 text-lg">
-                    {edu.institution}, {edu.location}
-                  </p>
-                  <div className="inline-flex items-center gap-2 px-3 py-1 bg-green-500/10 rounded-full border border-green-500/20">
-                    <span className="text-green-400 font-bold">{edu.grade}</span>
-                  </div>
-                  {edu.details && (
-                    <p className="text-gray-400 text-sm mt-3">{edu.details}</p>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Experience Section */}
-          <div className="mb-8">
-            <h3 className="text-3xl font-bold text-white mb-8 text-center">Professional Experience</h3>
-          </div>
-
           <div className="relative">
             {/* Timeline line */}
             <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-teal-500/30"></div>
@@ -190,6 +160,53 @@ const Experience: React.FC = () => {
                   <div className="md:w-1/2"></div>
                 </div>
               ))}
+            </div>
+          </div>
+          
+          <div className="mt-16 bg-gray-800 rounded-xl p-6 border border-gray-700">
+            <h3 className="text-2xl font-bold text-white mb-6">Education</h3>
+            
+            <div className="space-y-6">
+              {education.map((edu) => (
+                <div key={edu.id} className="border-l-4 border-teal-500 pl-4">
+                  <div className="flex flex-col sm:flex-row sm:items-start justify-between mb-2">
+                    <h4 className="text-lg font-medium text-white">
+                      {edu.degree}
+                    </h4>
+                    <span className="text-teal-400 font-medium text-sm">{edu.period}</span>
+                  </div>
+                  <p className="text-gray-300 mb-1">
+                    {edu.institution}, {edu.location}
+                  </p>
+                  <p className="text-gray-400 font-medium">{edu.grade}</p>
+                  {edu.details && (
+                    <p className="text-gray-400 text-sm mt-2">{edu.details}</p>
+                  )}
+                </div>
+              ))}
+            </div>
+            
+            <div className="mt-6">
+              <h4 className="text-sm font-medium text-gray-300 mb-3">Relevant Coursework:</h4>
+              <div className="flex flex-wrap gap-2">
+                {[
+                  'Data Structures', 
+                  'Algorithms Analysis', 
+                  'Object Oriented Programming',
+                  'Database Management', 
+                  'Computer Networking', 
+                  'Operating System',
+                  'Machine Learning', 
+                  'Software Methodology'
+                ].map((course) => (
+                  <span 
+                    key={course}
+                    className="px-3 py-1 bg-gray-700 text-gray-300 rounded-full text-xs border border-gray-600"
+                  >
+                    {course}
+                  </span>
+                ))}
+              </div>
             </div>
           </div>
         </div>
