@@ -34,6 +34,9 @@ const Skills: React.FC = () => {
     { name: 'MongoDB', category: 'databases' },
     { name: 'MySQL', category: 'databases' },
     { name: 'PostgreSQL', category: 'databases' },
+    { name: 'Amazon AWS', category: 'cloud' },
+    { name: 'Docker', category: 'tools' },
+    { name: 'Machine Learning', category: 'ai' },
     { name: 'Data Structures', category: 'cs' },
     { name: 'Algorithms', category: 'cs' },
     { name: 'Object-Oriented Programming', category: 'cs' },
@@ -42,6 +45,7 @@ const Skills: React.FC = () => {
     { name: 'VS Code', category: 'tools' },
     { name: 'Postman', category: 'tools' },
     { name: 'Linux', category: 'tools' },
+    { name: 'Kubernetes', category: 'cloud' },
     { name: 'Problem Solving', category: 'soft' },
     { name: 'Team Leadership', category: 'soft' },
     { name: 'Communication', category: 'soft' },
@@ -54,6 +58,8 @@ const Skills: React.FC = () => {
     { id: 'web', label: 'Web Technologies', icon: <Globe className="w-5 h-5" />, color: 'green' },
     { id: 'frameworks', label: 'Frameworks', icon: <Cpu className="w-5 h-5" />, color: 'purple' },
     { id: 'databases', label: 'Databases', icon: <Database className="w-5 h-5" />, color: 'orange' },
+    { id: 'cloud', label: 'Cloud & DevOps', icon: <Globe className="w-5 h-5" />, color: 'cyan' },
+    { id: 'ai', label: 'AI & ML', icon: <Brain className="w-5 h-5" />, color: 'indigo' },
     { id: 'cs', label: 'CS Fundamentals', icon: <BookOpen className="w-5 h-5" />, color: 'red' },
     { id: 'tools', label: 'Tools', icon: <Wrench className="w-5 h-5" />, color: 'yellow' },
     { id: 'soft', label: 'Soft Skills', icon: <Users className="w-5 h-5" />, color: 'pink' },
@@ -73,6 +79,8 @@ const Skills: React.FC = () => {
       red: 'bg-red-500/10 border-red-500/30 text-red-400 hover:bg-red-500/20 hover:border-red-500',
       yellow: 'bg-yellow-500/10 border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/20 hover:border-yellow-500',
       pink: 'bg-pink-500/10 border-pink-500/30 text-pink-400 hover:bg-pink-500/20 hover:border-pink-500',
+      cyan: 'bg-cyan-500/10 border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/20 hover:border-cyan-500',
+      indigo: 'bg-indigo-500/10 border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/20 hover:border-indigo-500',
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.teal;
   };
@@ -87,6 +95,8 @@ const Skills: React.FC = () => {
       red: 'bg-red-500 text-white border-red-500',
       yellow: 'bg-yellow-500 text-black border-yellow-500',
       pink: 'bg-pink-500 text-white border-pink-500',
+      cyan: 'bg-cyan-500 text-black border-cyan-500',
+      indigo: 'bg-indigo-500 text-white border-indigo-500',
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.teal;
   };
@@ -128,7 +138,7 @@ const Skills: React.FC = () => {
         
         <div className="max-w-6xl mx-auto">
           {/* Category Filter Buttons */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-2">
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-2 max-w-4xl mx-auto">
             {categories.map(category => (
               <button
                 key={category.id}
@@ -147,7 +157,7 @@ const Skills: React.FC = () => {
           </div>
           
           {/* Skills Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 justify-items-center">
             {filteredSkills.map((skill, index) => {
               const category = categories.find(cat => cat.id === skill.category);
               return (
