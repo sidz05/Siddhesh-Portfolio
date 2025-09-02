@@ -1,5 +1,19 @@
+<<<<<<< HEAD
 import React, { useState, useEffect, useRef } from 'react';
 import { Code, Database, Globe, Wrench, Brain, Users, Cpu, BookOpen } from 'lucide-react';
+=======
+import React, { useState, useEffect, useRef } from "react";
+import {
+  Code,
+  Database,
+  Globe,
+  Wrench,
+  Brain,
+  Users,
+  Cpu,
+  BookOpen,
+} from "lucide-react";
+>>>>>>> e4747c6 (Initial commit of my portfolio project)
 
 interface Skill {
   name: string;
@@ -14,6 +28,7 @@ interface Category {
 }
 
 const Skills: React.FC = () => {
+<<<<<<< HEAD
   const [activeCategory, setActiveCategory] = useState('all');
   const skillRefs = useRef<(HTMLDivElement | null)[]>([]);
   
@@ -73,12 +88,121 @@ const Skills: React.FC = () => {
       red: 'bg-red-500/10 border-red-500/30 text-red-400 hover:bg-red-500/20 hover:border-red-500',
       yellow: 'bg-yellow-500/10 border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/20 hover:border-yellow-500',
       pink: 'bg-pink-500/10 border-pink-500/30 text-pink-400 hover:bg-pink-500/20 hover:border-pink-500',
+=======
+  const [activeCategory, setActiveCategory] = useState("all");
+  const skillRefs = useRef<(HTMLDivElement | null)[]>([]);
+
+  const skills: Skill[] = [
+    { name: "C++", category: "languages" },
+    { name: "Java", category: "languages" },
+    { name: "Python", category: "languages" },
+    { name: "JavaScript", category: "languages" },
+    { name: "TypeScript", category: "languages" },
+    { name: "HTML5", category: "web" },
+    { name: "CSS3", category: "web" },
+    { name: "Tailwind CSS", category: "web" },
+    { name: "Responsive Design", category: "web" },
+    { name: "React", category: "frameworks" },
+    { name: "Node.js", category: "frameworks" },
+    { name: "Express.js", category: "frameworks" },
+    { name: "Vite", category: "frameworks" },
+    { name: "MongoDB", category: "databases" },
+    { name: "MySQL", category: "databases" },
+    { name: "Data Structures", category: "cs" },
+    { name: "Algorithms", category: "cs" },
+    { name: "Object-Oriented Programming", category: "cs" },
+    { name: "Operating Sysytem", category: "cs" },
+    { name: "Computer Networks", category: "cs" },
+    { name: "Git/GitHub", category: "tools" },
+    { name: "VS Code", category: "tools" },
+    { name: "Postman", category: "tools" },
+    { name: "Linux", category: "tools" },
+    { name: "Docker", category: "tools" }, // ✅ Added Docker
+    { name: "AWS (Amazon Web Services)", category: "tools" }, // ✅ Added AWS
+    { name: "Problem Solving", category: "soft" },
+    { name: "Team Leadership", category: "soft" },
+    { name: "Communication", category: "soft" },
+    { name: "Project Management", category: "soft" },
+  ];
+
+  const categories: Category[] = [
+    {
+      id: "all",
+      label: "All Skills",
+      icon: <Brain className="w-5 h-5" />,
+      color: "teal",
+    },
+    {
+      id: "languages",
+      label: "Languages",
+      icon: <Code className="w-5 h-5" />,
+      color: "blue",
+    },
+    {
+      id: "web",
+      label: "Web Technologies",
+      icon: <Globe className="w-5 h-5" />,
+      color: "green",
+    },
+    {
+      id: "frameworks",
+      label: "Frameworks",
+      icon: <Cpu className="w-5 h-5" />,
+      color: "purple",
+    },
+    {
+      id: "databases",
+      label: "Databases",
+      icon: <Database className="w-5 h-5" />,
+      color: "orange",
+    },
+    {
+      id: "cs",
+      label: "CS Fundamentals",
+      icon: <BookOpen className="w-5 h-5" />,
+      color: "red",
+    },
+    {
+      id: "tools",
+      label: "Tools",
+      icon: <Wrench className="w-5 h-5" />,
+      color: "yellow",
+    },
+    {
+      id: "soft",
+      label: "Soft Skills",
+      icon: <Users className="w-5 h-5" />,
+      color: "pink",
+    },
+  ];
+
+  const filteredSkills =
+    activeCategory === "all"
+      ? skills
+      : skills.filter((skill) => skill.category === activeCategory);
+
+  const getColorClasses = (color: string) => {
+    const colorMap = {
+      teal: "bg-teal-500/10 border-teal-500/30 text-teal-400 hover:bg-teal-500/20 hover:border-teal-500",
+      blue: "bg-blue-500/10 border-blue-500/30 text-blue-400 hover:bg-blue-500/20 hover:border-blue-500",
+      green:
+        "bg-green-500/10 border-green-500/30 text-green-400 hover:bg-green-500/20 hover:border-green-500",
+      purple:
+        "bg-purple-500/10 border-purple-500/30 text-purple-400 hover:bg-purple-500/20 hover:border-purple-500",
+      orange:
+        "bg-orange-500/10 border-orange-500/30 text-orange-400 hover:bg-orange-500/20 hover:border-orange-500",
+      red: "bg-red-500/10 border-red-500/30 text-red-400 hover:bg-red-500/20 hover:border-red-500",
+      yellow:
+        "bg-yellow-500/10 border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/20 hover:border-yellow-500",
+      pink: "bg-pink-500/10 border-pink-500/30 text-pink-400 hover:bg-pink-500/20 hover:border-pink-500",
+>>>>>>> e4747c6 (Initial commit of my portfolio project)
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.teal;
   };
 
   const getActiveColorClasses = (color: string) => {
     const colorMap = {
+<<<<<<< HEAD
       teal: 'bg-teal-500 text-black border-teal-500',
       blue: 'bg-blue-500 text-white border-blue-500',
       green: 'bg-green-500 text-black border-green-500',
@@ -87,6 +211,16 @@ const Skills: React.FC = () => {
       red: 'bg-red-500 text-white border-red-500',
       yellow: 'bg-yellow-500 text-black border-yellow-500',
       pink: 'bg-pink-500 text-white border-pink-500',
+=======
+      teal: "bg-teal-500 text-black border-teal-500",
+      blue: "bg-blue-500 text-white border-blue-500",
+      green: "bg-green-500 text-black border-green-500",
+      purple: "bg-purple-500 text-white border-purple-500",
+      orange: "bg-orange-500 text-black border-orange-500",
+      red: "bg-red-500 text-white border-red-500",
+      yellow: "bg-yellow-500 text-black border-yellow-500",
+      pink: "bg-pink-500 text-white border-pink-500",
+>>>>>>> e4747c6 (Initial commit of my portfolio project)
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.teal;
   };
@@ -94,18 +228,29 @@ const Skills: React.FC = () => {
   useEffect(() => {
     const observerOptions = {
       threshold: 0.1,
+<<<<<<< HEAD
       rootMargin: '0px 0px -50px 0px'
     };
     
+=======
+      rootMargin: "0px 0px -50px 0px",
+    };
+
+>>>>>>> e4747c6 (Initial commit of my portfolio project)
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry, index) => {
         if (entry.isIntersecting) {
           setTimeout(() => {
+<<<<<<< HEAD
             entry.target.classList.add('animate-bounce-in');
+=======
+            entry.target.classList.add("animate-bounce-in");
+>>>>>>> e4747c6 (Initial commit of my portfolio project)
           }, index * 100);
         }
       });
     }, observerOptions);
+<<<<<<< HEAD
     
     skillRefs.current.forEach(ref => {
       if (ref) observer.observe(ref);
@@ -113,6 +258,15 @@ const Skills: React.FC = () => {
     
     return () => {
       skillRefs.current.forEach(ref => {
+=======
+
+    skillRefs.current.forEach((ref) => {
+      if (ref) observer.observe(ref);
+    });
+
+    return () => {
+      skillRefs.current.forEach((ref) => {
+>>>>>>> e4747c6 (Initial commit of my portfolio project)
         if (ref) observer.unobserve(ref);
       });
     };
@@ -125,22 +279,35 @@ const Skills: React.FC = () => {
           Technical Skills
         </h2>
         <div className="w-20 h-1 bg-teal-500 mx-auto mb-8 sm:mb-12"></div>
+<<<<<<< HEAD
         
         <div className="max-w-6xl mx-auto">
           {/* Category Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-2">
             {categories.map(category => (
+=======
+
+        <div className="max-w-6xl mx-auto">
+          {/* Category Filter Buttons */}
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12 px-2">
+            {categories.map((category) => (
+>>>>>>> e4747c6 (Initial commit of my portfolio project)
               <button
                 key={category.id}
                 onClick={() => setActiveCategory(category.id)}
                 className={`flex items-center gap-2 px-3 sm:px-4 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-medium transition-all duration-300 transform hover:scale-105 border ${
                   activeCategory === category.id
                     ? getActiveColorClasses(category.color)
+<<<<<<< HEAD
                     : 'bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white border-gray-700 hover:border-gray-600'
+=======
+                    : "bg-gray-800 text-gray-300 hover:bg-gray-700 hover:text-white border-gray-700 hover:border-gray-600"
+>>>>>>> e4747c6 (Initial commit of my portfolio project)
                 }`}
               >
                 {category.icon}
                 <span className="hidden sm:inline">{category.label}</span>
+<<<<<<< HEAD
                 <span className="sm:hidden">{category.label.split(' ')[0]}</span>
               </button>
             ))}
@@ -156,6 +323,29 @@ const Skills: React.FC = () => {
                   ref={el => skillRefs.current[index] = el}
                   className={`skill-box p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2 cursor-pointer text-center opacity-0 translate-y-4 ${
                     category ? getColorClasses(category.color) : getColorClasses('teal')
+=======
+                <span className="sm:hidden">
+                  {category.label.split(" ")[0]}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {/* Skills Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3 sm:gap-4 justify-center">
+            {filteredSkills.map((skill, index) => {
+              const category = categories.find(
+                (cat) => cat.id === skill.category
+              );
+              return (
+                <div
+                  key={`${skill.name}-${activeCategory}`}
+                  ref={(el) => (skillRefs.current[index] = el)}
+                  className={`skill-box p-3 sm:p-4 rounded-xl border-2 transition-all duration-300 transform hover:scale-110 hover:-translate-y-2 cursor-pointer text-center opacity-0 translate-y-4 ${
+                    category
+                      ? getColorClasses(category.color)
+                      : getColorClasses("teal")
+>>>>>>> e4747c6 (Initial commit of my portfolio project)
                   }`}
                   style={{
                     animationDelay: `${index * 50}ms`,
@@ -163,9 +353,13 @@ const Skills: React.FC = () => {
                 >
                   <div className="flex flex-col items-center gap-2">
                     {category?.icon && (
+<<<<<<< HEAD
                       <div className="mb-1">
                         {category.icon}
                       </div>
+=======
+                      <div className="mb-1">{category.icon}</div>
+>>>>>>> e4747c6 (Initial commit of my portfolio project)
                     )}
                     <span className="font-medium text-xs sm:text-sm text-center leading-tight">
                       {skill.name}
@@ -183,7 +377,16 @@ const Skills: React.FC = () => {
                 {filteredSkills.length}
               </span>
               <span className="text-gray-300 text-sm sm:text-base">
+<<<<<<< HEAD
                 {activeCategory === 'all' ? 'Total Skills' : `${categories.find(c => c.id === activeCategory)?.label || 'Skills'}`}
+=======
+                {activeCategory === "all"
+                  ? "Total Skills"
+                  : `${
+                      categories.find((c) => c.id === activeCategory)?.label ||
+                      "Skills"
+                    }`}
+>>>>>>> e4747c6 (Initial commit of my portfolio project)
               </span>
             </div>
           </div>
@@ -234,4 +437,8 @@ const Skills: React.FC = () => {
   );
 };
 
+<<<<<<< HEAD
 export default Skills;
+=======
+export default Skills;
+>>>>>>> e4747c6 (Initial commit of my portfolio project)
