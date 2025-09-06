@@ -15,10 +15,10 @@ const Navbar: React.FC = () => {
       const sections = [
         'home',
         'about',
+        'education',
         'skills',
         'projects',
         'achievements',
-        'experience',
         'certifications',
         'contact',
       ];
@@ -41,10 +41,10 @@ const Navbar: React.FC = () => {
   const navItems = [
     { href: '#home', title: 'Home' },
     { href: '#about', title: 'About' },
+    { href: '#education', title: 'Education' },
     { href: '#skills', title: 'Skills' },
     { href: '#projects', title: 'Projects' },
     { href: '#achievements', title: 'Achievements' },
-    { href: '#experience', title: 'Experience' },
     { href: '#certifications', title: 'Certifications' },
     { href: '#contact', title: 'Contact' },
   ];

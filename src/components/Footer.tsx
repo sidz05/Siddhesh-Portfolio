@@ -50,6 +50,18 @@ const Footer: React.FC = () => {
                 About
               </a>
               <a
+                href="#education"
+                className="text-gray-400 hover:text-teal-400 transition-colors"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document
+                    .querySelector("#education")
+                    ?.scrollIntoView({ behavior: "smooth" });
+                }}
+              >
+                Education
+              </a>
+              <a
                 href="#skills"
                 className="text-gray-400 hover:text-teal-400 transition-colors"
                 onClick={(e) => {
