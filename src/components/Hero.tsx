@@ -208,7 +208,7 @@ const Hero: React.FC = () => {
 
       {/* Resume Modal */}
       {showResume && (
-        <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50 p-4">
+        <div className="fixed inset-0 bg-black/90 backdrop-blur-sm flex items-center justify-center z-50 p-4">
           <div className="bg-gray-900 rounded-2xl shadow-2xl w-full max-w-4xl h-[80vh] relative overflow-hidden animate-fadeIn">
             {/* Close Button */}
             <button

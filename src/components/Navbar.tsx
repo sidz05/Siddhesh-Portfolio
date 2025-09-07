@@ -84,13 +84,13 @@ const Navbar: React.FC = () => {
                   }}
                   className={`text-sm font-medium transition-all duration-300 relative ${
                     activeSection === item.href
-                      ? 'text-green-400'
+                      ? 'text-teal-400'
                       : 'text-gray-300 hover:text-white'
                   }`}
                 >
                   {item.title}
                   {activeSection === item.href && (
-                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-green-400 rounded-full"></span>
+                    <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-teal-400 rounded-full"></span>
                   )}
                 </a>
               </li>
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
         {/* Mobile menu button */}
         <button
           onClick={toggleMenu}
-          className="md:hidden p-2 rounded-md text-gray-300 hover:text-green-400"
+          className="md:hidden p-2 rounded-md text-gray-300 hover:text-teal-400"
           aria-label="Toggle menu"
         >
           {isOpen ? <X size={24} /> : <Menu size={24} />}
@@ -110,7 +110,7 @@ const Navbar: React.FC = () => {
 
       {/* Mobile nav (below pill) */}
       {isOpen && (
-        <div className="absolute top-16 w-[90%] md:hidden bg-black/90 backdrop-blur-md rounded-2xl shadow-lg px-4 py-4 space-y-2">
+        <div className="absolute top-16 w-[90%] md:hidden bg-black/95 backdrop-blur-md rounded-2xl shadow-lg border border-gray-700 px-4 py-4 space-y-2">
           {navItems.map((item) => (
             <a
               key={item.href}
@@ -124,7 +124,7 @@ const Navbar: React.FC = () => {
               }}
               className={`block px-3 py-2 rounded-md text-base font-medium ${
                 activeSection === item.href
-                  ? 'text-green-500'
+                  ? 'text-teal-400'
                   : 'text-gray-300 hover:text-white'
               }`}
             >

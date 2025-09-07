@@ -40,7 +40,7 @@ const Counter: React.FC<CounterProps> = ({ end, duration, suffix }) => {
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-gray-900">
+    <section id="about" className="py-20 bg-black">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-4 text-white">
@@ -77,7 +77,7 @@ const About: React.FC = () => {
             <div className="flex justify-center">
               <div className="relative rounded-full w-80 h-80">
                 {/* Image with glow & hover scale */}
-                <div className="rounded-full p-1 bg-gray-900 border-2 border-teal-500 shadow-[0_0_20px_rgba(20,255,200,0.5)] transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-[0_0_30px_rgba(20,255,200,0.7)] w-full h-full">
+                <div className="rounded-full p-1 bg-black border-2 border-teal-500 shadow-[0_0_20px_rgba(20,255,200,0.5)] transition-all duration-500 ease-in-out hover:scale-105 hover:shadow-[0_0_30px_rgba(20,255,200,0.7)] w-full h-full">
                   <img
                     src="/Photo/Siddhesh_Photo.png"
                     alt="Siddhesh Patil"
@@ -86,7 +86,7 @@ const About: React.FC = () => {
                 </div>
 
                 {/* Overlay for social links */}
-                <div className="absolute inset-0 rounded-full bg-gray-900/80 flex items-center justify-center gap-6 opacity-0 hover:opacity-100 transition-opacity duration-300">
+                <div className="absolute inset-0 rounded-full bg-black/80 flex items-center justify-center gap-6 opacity-0 hover:opacity-100 transition-opacity duration-300">
                   <a
                     href="https://github.com/sidz05"
                     target="_blank"
@@ -121,17 +121,17 @@ const About: React.FC = () => {
 
           {/* Counters */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
-            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-teal-500 transition-all duration-300">
-              <Counter end={2} duration={2000} suffix="+" />
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-teal-500 transition-all duration-300">
+              <Counter end={3} duration={2000} suffix="+" />
               <p className="text-gray-300">Years of Coding Experience</p>
             </div>
 
-            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-teal-500 transition-all duration-300">
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-teal-500 transition-all duration-300">
               <Counter end={5} duration={2500} suffix="+" />
               <p className="text-gray-300">Projects Completed</p>
             </div>
 
-            <div className="bg-gray-800 rounded-xl p-6 border border-gray-700 hover:border-teal-500 transition-all duration-300">
+            <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-teal-500 transition-all duration-300">
               <Counter end={10} duration={3000} suffix="+" />
               <p className="text-gray-300">Events Organized</p>
             </div>

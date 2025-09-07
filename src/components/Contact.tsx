@@ -280,7 +280,7 @@ const Contact: React.FC = () => {
               </div>
 
               {/* Map Card */}
-              <div className="bg-gray-900/60 backdrop-blur-lg rounded-2xl p-1 border border-gray-800 shadow-xl overflow-hidden">
+              <div className="bg-gray-900/80 backdrop-blur-lg rounded-2xl p-1 border border-gray-700 shadow-xl overflow-hidden">
                 <iframe
                   title="Google Map"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3783.4321955802394!2d73.85674331536868!3d18.52043028739657!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c06f508d8d17%3A0xdbc1cbf2745a491!2sPune%2C%20Maharashtra!5e0!3m2!1sen!2sin!4v1691672939339!5m2!1sen!2sin"

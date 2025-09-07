@@ -22,7 +22,7 @@ function App() {
   }, []);
 
   return (
-    <div className="font-sans bg-black text-white transition-colors duration-300">
+    <div className="font-sans bg-black text-white transition-colors duration-300 min-h-screen">
       <Navbar />
       <Hero />
       <About />
