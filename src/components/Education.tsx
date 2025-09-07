@@ -219,7 +219,7 @@ const Education: React.FC = () => {
                         {/* Hover glow effect */}
                         <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${colors.bg} opacity-0 group-hover:opacity-20 transition-opacity duration-500 pointer-events-none`}></div>
                       </div>
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center border-4 border-black">
+                    </div>
                     
                     {/* Spacer for timeline */}
                     <div className="md:w-1/2"></div>
