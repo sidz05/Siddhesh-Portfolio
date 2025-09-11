@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from "react";
-import { Award, BookOpen, Code, Trophy, Users, Target } from "lucide-react";
+import { Award, BookOpen, Code, Trophy, Users, Target, Star, Medal } from "lucide-react";
 
 interface Achievement {
   id: string;
@@ -99,6 +99,24 @@ const Achievements: React.FC = () => {
   const technicalAchievements = achievements.filter(a => a.category === 'technical');
   const personalAchievements = achievements.filter(a => a.category === 'personal');
 
+  const getCategoryColor = (category: string) => {
+    return category === 'technical' 
+      ? {
+          bg: 'from-blue-500/20 to-indigo-500/20',
+          border: 'border-blue-500/30',
+          accent: 'text-blue-400',
+          dot: 'bg-gradient-to-r from-blue-500 to-indigo-500',
+          glow: 'shadow-blue-500/30'
+        }
+      : {
+          bg: 'from-purple-500/20 to-pink-500/20',
+          border: 'border-purple-500/30',
+          accent: 'text-purple-400',
+          dot: 'bg-gradient-to-r from-purple-500 to-pink-500',
+          glow: 'shadow-purple-500/30'
+        };
+  };
+
   useEffect(() => {
     const observerOptions = {
       threshold: 0.2,
@@ -126,107 +144,158 @@ const Achievements: React.FC = () => {
   }, []);
 
   return (
-    <section id="achievements" className="py-20 bg-black">
+    <section id="achievements" className="py-20 bg-black relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-20 left-10 w-32 h-32 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-20 right-10 w-40 h-40 bg-purple-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-60 h-60 bg-pink-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+      </div>
+
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-4xl font-bold text-center mb-4 text-white">
-          Achievements
-        </h2>
-        <div className="w-20 h-1 bg-teal-500 mx-auto mb-12"></div>
+        <div className="text-center mb-16">
+          <h2 className="text-4xl md:text-5xl font-bold mb-4 text-white">
+            Achievements & Recognition
+          </h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 mx-auto mb-6 rounded-full"></div>
+          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            Milestones and accomplishments that define my journey in technology and leadership
+          </p>
+        </div>
 
         <div className="max-w-6xl mx-auto">
           {/* Technical Achievements Timeline */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">Technical Achievements</h3>
+            <h3 className="text-2xl font-bold text-white mb-8 text-center flex items-center justify-center gap-3">
+              <Code className="text-blue-400" size={28} />
+              Technical Achievements
+            </h3>
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-teal-500/30"></div>
+              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500 to-indigo-500 rounded-full opacity-80 shadow-lg"></div>
               
               <div className="space-y-12">
-                {technicalAchievements.map((achievement, index) => (
-                  <div 
-                    key={achievement.id}
-                    ref={el => achievementRefs.current[index] = el}
-                    className={`relative flex flex-col md:flex-row md:items-center opacity-0 translate-y-10 transition-all duration-700 ease-out ${
-                      index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                    }`}
-                  >
-                    {/* Timeline dot */}
-                    <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-teal-500 rounded-full border-4 border-black z-10"></div>
-                    
-                    {/* Content */}
-                    <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pl-0 md:pr-12' : 'md:pl-12 md:pr-0'} pl-8`}>
-                      <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-teal-500 transition-all duration-300">
-                        <div className="flex items-start space-x-4">
-                          <div className="flex-shrink-0 p-3 bg-teal-500/10 rounded-full border border-teal-500/20">
-                            {achievement.icon}
+                {technicalAchievements.map((achievement, index) => {
+                  const colors = getCategoryColor('technical');
+                  return (
+                    <div 
+                      key={achievement.id}
+                      ref={el => achievementRefs.current[index] = el}
+                      className={`relative flex flex-col md:flex-row md:items-center opacity-0 translate-y-10 transition-all duration-700 ease-out ${
+                        index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                      }`}
+                    >
+                      {/* Timeline dot */}
+                      <div className={`absolute left-0 md:left-1/2 transform -translate-x-1/2 w-8 h-8 ${colors.dot} rounded-full border-4 border-black z-20 shadow-xl ${colors.glow}`}>
+                        <div className={`absolute inset-0 ${colors.dot} rounded-full animate-ping opacity-30`}></div>
+                        <div className="absolute inset-2 bg-white rounded-full opacity-20"></div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pl-0 md:pr-12' : 'md:pl-12 md:pr-0'} pl-8`}>
+                        <div className={`relative bg-gradient-to-br ${colors.bg} backdrop-blur-lg rounded-3xl p-8 border-2 ${colors.border} hover:border-opacity-80 transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 shadow-2xl ${colors.glow} group overflow-hidden`}>
+                          {/* Decorative elements */}
+                          <div className={`absolute -top-10 -right-10 w-32 h-32 ${colors.dot} opacity-10 rounded-full blur-xl`}></div>
+                          <div className={`absolute -bottom-10 -left-10 w-24 h-24 ${colors.dot} opacity-10 rounded-full blur-xl`}></div>
+                          
+                          <div className="flex items-start space-x-4">
+                            <div className={`flex-shrink-0 p-4 bg-gradient-to-br ${colors.bg} rounded-2xl border-2 ${colors.border} shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                              <div className="text-blue-400">
+                                {achievement.icon}
+                              </div>
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="text-xl font-bold text-white mb-2 group-hover:text-gray-100 transition-colors duration-300 leading-tight">{achievement.title}</h4>
+                              {achievement.date && (
+                                <span className={`${colors.accent} text-sm font-medium mb-3 block bg-gray-800/60 rounded-lg px-3 py-1 inline-block`}>{achievement.date}</span>
+                              )}
+                              <p className="text-gray-300 text-sm leading-relaxed">{achievement.description}</p>
+                            </div>
                           </div>
-                          <div>
-                            <h4 className="text-lg font-bold text-white mb-2">{achievement.title}</h4>
-                            {achievement.date && (
-                              <span className="text-teal-400 text-sm font-medium mb-2 block">{achievement.date}</span>
-                            )}
-                            <p className="text-gray-300 text-sm leading-relaxed">{achievement.description}</p>
-                          </div>
+                          
+                          {/* Hover glow effect */}
+                          <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${colors.bg} opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none`}></div>
                         </div>
                       </div>
+                      
+                      {/* Spacer for timeline */}
+                      <div className="md:w-1/2"></div>
                     </div>
-                    
-                    {/* Spacer for timeline */}
-                    <div className="md:w-1/2"></div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
 
           {/* Personal Achievements Timeline */}
           <div className="mb-16">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">Personal Achievements</h3>
+            <h3 className="text-2xl font-bold text-white mb-8 text-center flex items-center justify-center gap-3">
+              <Users className="text-purple-400" size={28} />
+              Leadership & Personal Achievements
+            </h3>
             <div className="relative">
               {/* Timeline line */}
-              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-teal-500/30"></div>
+              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-purple-500 to-pink-500 rounded-full opacity-80 shadow-lg"></div>
               
               <div className="space-y-12">
-                {personalAchievements.map((achievement, index) => (
-                  <div 
-                    key={achievement.id}
-                    ref={el => achievementRefs.current[technicalAchievements.length + index] = el}
-                    className={`relative flex flex-col md:flex-row md:items-center opacity-0 translate-y-10 transition-all duration-700 ease-out ${
-                      index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                    }`}
-                  >
-                    {/* Timeline dot */}
-                    <div className="absolute left-0 md:left-1/2 transform -translate-x-1/2 w-5 h-5 bg-teal-500 rounded-full border-4 border-black z-10"></div>
-                    
-                    {/* Content */}
-                    <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pl-0 md:pr-12' : 'md:pl-12 md:pr-0'} pl-8`}>
-                      <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-teal-500 transition-all duration-300">
-                        <div className="flex items-start space-x-4">
-                          <div className="flex-shrink-0 p-3 bg-teal-500/10 rounded-full border border-teal-500/20">
-                            {achievement.icon}
+                {personalAchievements.map((achievement, index) => {
+                  const colors = getCategoryColor('personal');
+                  return (
+                    <div 
+                      key={achievement.id}
+                      ref={el => achievementRefs.current[technicalAchievements.length + index] = el}
+                      className={`relative flex flex-col md:flex-row md:items-center opacity-0 translate-y-10 transition-all duration-700 ease-out ${
+                        index % 2 === 0 ? 'md:flex-row-reverse' : ''
+                      }`}
+                    >
+                      {/* Timeline dot */}
+                      <div className={`absolute left-0 md:left-1/2 transform -translate-x-1/2 w-8 h-8 ${colors.dot} rounded-full border-4 border-black z-20 shadow-xl ${colors.glow}`}>
+                        <div className={`absolute inset-0 ${colors.dot} rounded-full animate-ping opacity-30`}></div>
+                        <div className="absolute inset-2 bg-white rounded-full opacity-20"></div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pl-0 md:pr-12' : 'md:pl-12 md:pr-0'} pl-8`}>
+                        <div className={`relative bg-gradient-to-br ${colors.bg} backdrop-blur-lg rounded-3xl p-8 border-2 ${colors.border} hover:border-opacity-80 transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 shadow-2xl ${colors.glow} group overflow-hidden`}>
+                          {/* Decorative elements */}
+                          <div className={`absolute -top-10 -right-10 w-32 h-32 ${colors.dot} opacity-10 rounded-full blur-xl`}></div>
+                          <div className={`absolute -bottom-10 -left-10 w-24 h-24 ${colors.dot} opacity-10 rounded-full blur-xl`}></div>
+                          
+                          <div className="flex items-start space-x-4">
+                            <div className={`flex-shrink-0 p-4 bg-gradient-to-br ${colors.bg} rounded-2xl border-2 ${colors.border} shadow-xl group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                              <div className="text-purple-400">
+                                {achievement.icon}
+                              </div>
+                            </div>
+                            <div className="flex-1">
+                              <h4 className="text-xl font-bold text-white mb-2 group-hover:text-gray-100 transition-colors duration-300 leading-tight">{achievement.title}</h4>
+                              {achievement.date && (
+                                <span className={`${colors.accent} text-sm font-medium mb-3 block bg-gray-800/60 rounded-lg px-3 py-1 inline-block`}>{achievement.date}</span>
+                              )}
+                              <p className="text-gray-300 text-sm leading-relaxed">{achievement.description}</p>
+                            </div>
                           </div>
-                          <div>
-                            <h4 className="text-lg font-bold text-white mb-2">{achievement.title}</h4>
-                            {achievement.date && (
-                              <span className="text-teal-400 text-sm font-medium mb-2 block">{achievement.date}</span>
-                            )}
-                            <p className="text-gray-300 text-sm leading-relaxed">{achievement.description}</p>
-                          </div>
+                          
+                          {/* Hover glow effect */}
+                          <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${colors.bg} opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none`}></div>
                         </div>
                       </div>
+                      
+                      {/* Spacer for timeline */}
+                      <div className="md:w-1/2"></div>
                     </div>
-                    
-                    {/* Spacer for timeline */}
-                    <div className="md:w-1/2"></div>
-                  </div>
-                ))}
+                  );
+                })}
               </div>
             </div>
           </div>
 
           {/* Coding Platform Cards */}
           <div className="mt-16">
-            <h3 className="text-2xl font-bold text-white mb-8 text-center">Coding Profiles</h3>
+            <h3 className="text-2xl font-bold text-white mb-8 text-center flex items-center justify-center gap-3">
+              <Medal className="text-teal-400" size={28} />
+              Coding Profiles & Rankings
+            </h3>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {/* CodeChef Card */}
               <a

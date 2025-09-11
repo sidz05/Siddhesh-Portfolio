@@ -20,6 +20,7 @@ const Navbar: React.FC = () => {
         'projects',
         'achievements',
         'certifications',
+        'gallery',
         'contact',
       ];
       for (const section of sections) {
