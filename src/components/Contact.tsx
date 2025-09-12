@@ -108,25 +108,12 @@ const Contact: React.FC = () => {
                   <div>
                     <h4 className="text-sm font-medium text-gray-300 mb-1">Instagram</h4>
                     <a href="https://www.instagram.com/sidzzz.05/" target="_blank" className="text-white hover:text-pink-400 transition-colors">
-                      @sidzzz.05
+                      Instagram
                     </a>
                   </div>
                 </div>
 
                 {/* Threads */}
-                <div className="flex items-start">
-                  <div className="mt-1 mr-4 flex-shrink-0 bg-purple-500/10 p-3 rounded-full border border-purple-500/20">
-                    <svg className="text-purple-400 w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M12 2.163c-3.204 0-3.584.012-4.85.07-1.366.062-2.633.33-3.608 1.306-.975.975-1.244 2.242-1.306 3.608C2.175 7.747 2.163 8.126 2.163 11.33s.012 3.584.07 4.85c.062 1.366.33 2.633 1.306 3.608.975.975 2.242 1.244 3.608 1.306 1.266.058 1.645.07 4.85.07s3.584-.012 4.85-.07c1.366-.062 2.633-.33 3.608-1.306.975-.975 1.244-2.242 1.306-3.608.058-1.266.07-1.645.07-4.85s-.012-3.584-.07-4.85c-.062-1.366-.33-2.633-1.306-3.608-.975-.975-2.242-1.244-3.608-1.306C15.584 2.175 15.204 2.163 12 2.163z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="text-sm font-medium text-gray-300 mb-1">Threads</h4>
-                    <a href="https://www.threads.net/@sidzzz.05" target="_blank" className="text-white hover:text-purple-400 transition-colors">
-                      @sidzzz.05
-                    </a>
-                  </div>
-                </div>
 
                 {/* LeetCode */}
                 <div className="flex items-start">
@@ -138,7 +125,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h4 className="text-sm font-medium text-gray-300 mb-1">LeetCode</h4>
                     <a href="https://leetcode.com/u/sidzp05/" target="_blank" className="text-white hover:text-orange-400 transition-colors">
-                      sidzzz05
+                      LeetCode
                     </a>
                   </div>
                 </div>
@@ -152,8 +139,8 @@ const Contact: React.FC = () => {
                   </div>
                   <div>
                     <h4 className="text-sm font-medium text-gray-300 mb-1">GitHub</h4>
-                    <a href="https://leetcode.com/u/sidzp05/" target="_blank" className="text-white hover:text-gray-400 transition-colors">
-                      sidzzz05
+                    <a href="https://github.com/sidz05" target="_blank" className="text-white hover:text-gray-400 transition-colors">
+                      GitHub
                     </a>
                   </div>
                 </div>
@@ -168,7 +155,7 @@ const Contact: React.FC = () => {
                   <div>
                     <h4 className="text-sm font-medium text-gray-300 mb-1">CodeChef</h4>
                     <a href="https://www.codechef.com/users/sidzp05" target="_blank" className="text-white hover:text-yellow-400 transition-colors">
-                      sidzzz05
+                      CodeChef
                     </a>
                   </div>
                 </div>
