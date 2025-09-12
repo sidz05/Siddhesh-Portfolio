@@ -7,7 +7,6 @@ import Projects from './components/Projects';
 import Achievements from './components/Achievements';
 import Education from './components/Education';
 import Certifications from './components/Certifications';
-import PhotoGallery from './components/PhotoGallery';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './utils/animations.css';
@@ -32,7 +31,6 @@ function App() {
       <Projects />
       <Achievements />
       <Certifications />
-      <PhotoGallery />
       <Contact />
       <Footer />
     </div>

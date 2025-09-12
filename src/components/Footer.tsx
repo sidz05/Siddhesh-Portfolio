@@ -86,18 +86,6 @@ const Footer: React.FC = () => {
                 Projects
               </a>
               <a
-                href="#gallery"
-                className="text-gray-400 hover:text-teal-400 transition-colors"
-                onClick={(e) => {
-                  e.preventDefault();
-                  document
-                    .querySelector("#gallery")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Gallery
-              </a>
-              <a
                 href="#contact"
                 className="text-gray-400 hover:text-teal-400 transition-colors"
                 onClick={(e) => {
