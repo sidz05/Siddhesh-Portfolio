@@ -66,9 +66,8 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center bg-black text-white relative overflow-hidden"
+      className="min-h-screen flex items-center justify-center text-white relative overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-black via-gray-900 to-black"></div>
 
       {/* Floating icons */}
       <div className="absolute top-20 left-10 w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center opacity-30 animate-bounce">

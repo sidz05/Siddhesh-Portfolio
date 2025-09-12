@@ -129,7 +129,7 @@ const Education: React.FC = () => {
   }, []);
 
   return (
-    <section id="education" className="py-20 bg-black relative overflow-hidden">
+    <section id="education" className="py-20 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-32 h-32 bg-indigo-500 rounded-full blur-3xl animate-pulse"></div>

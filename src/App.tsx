@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react';
+import StarryBackground from './components/StarryBackground';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <div className="font-sans bg-black text-white transition-colors duration-300 min-h-screen">
+      <StarryBackground />
       <Navbar />
       <Hero />
       <About />
