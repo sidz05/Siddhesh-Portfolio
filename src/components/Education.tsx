@@ -150,8 +150,8 @@ const Education: React.FC = () => {
         
         <div className="max-w-5xl mx-auto">
           <div className="relative">
-            {/* Enhanced timeline line with gradient */}
-            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 via-emerald-500 via-cyan-500 to-amber-500 rounded-full opacity-80 shadow-lg"></div>
+            {/* Straight timeline line on the left */}
+            <div className="absolute left-4 top-0 bottom-0 w-1 bg-gradient-to-b from-indigo-500 via-emerald-500 via-cyan-500 to-amber-500 rounded-full opacity-80 shadow-lg"></div>
             
             {/* Education items */}
             <div className="space-y-16">
@@ -161,18 +161,16 @@ const Education: React.FC = () => {
                   <div 
                     key={edu.id}
                     ref={el => educationRefs.current[index] = el}
-                    className={`relative flex flex-col md:flex-row md:items-center opacity-0 translate-y-10 scale-95 transition-all duration-700 ease-out ${
-                      index % 2 === 0 ? 'md:flex-row-reverse' : ''
-                    }`}
+                    className="relative flex items-center opacity-0 translate-y-10 scale-95 transition-all duration-700 ease-out"
                   >
-                    {/* Enhanced timeline dot with pulsing animation */}
-                    <div className={`absolute left-0 md:left-1/2 transform -translate-x-1/2 w-8 h-8 ${colors.dot} rounded-full border-4 border-black z-20 shadow-xl ${colors.glow}`}>
+                    {/* Timeline dot on the left */}
+                    <div className={`absolute left-4 transform -translate-x-1/2 w-8 h-8 ${colors.dot} rounded-full border-4 border-black z-20 shadow-xl ${colors.glow}`}>
                       <div className={`absolute inset-0 ${colors.dot} rounded-full animate-ping opacity-30`}></div>
                       <div className="absolute inset-2 bg-white rounded-full opacity-20"></div>
                     </div>
                     
-                    {/* Enhanced content card */}
-                    <div className={`md:w-1/2 ${index % 2 === 0 ? 'md:pl-0 md:pr-16' : 'md:pl-16 md:pr-0'} pl-12`}>
+                    {/* Content card on the right */}
+                    <div className="flex-1 pl-16">
                       <div className={`relative bg-gradient-to-br ${colors.bg} backdrop-blur-lg rounded-3xl p-8 border-2 ${colors.border} hover:border-opacity-80 transition-all duration-500 transform hover:scale-105 hover:-translate-y-3 shadow-2xl ${colors.glow} group overflow-hidden`}>
                         {/* Decorative corner elements */}
                         <div className={`absolute -top-10 -right-10 w-32 h-32 ${colors.dot} opacity-10 rounded-full blur-xl`}></div>
@@ -240,9 +238,6 @@ const Education: React.FC = () => {
                         <div className={`absolute inset-0 rounded-3xl bg-gradient-to-br ${colors.bg} opacity-0 group-hover:opacity-30 transition-opacity duration-500 pointer-events-none`}></div>
                       </div>
                     </div>
-                    
-                    {/* Spacer for timeline */}
-                    <div className="md:w-1/2"></div>
                   </div>
                 );
               })}
