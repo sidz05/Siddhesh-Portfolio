@@ -60,7 +60,6 @@ const Skills: React.FC = () => {
     { name: "AWS EC2", category: "cloud" },
     { name: "AWS S3", category: "cloud" },
     { name: "AWS RDS", category: "cloud" },
-    { name: "GitHub", category: "cloud" },
     { name: "Retrieval-Augmented Generation (RAG)", category: "cs" },
     { name: "LangChain", category: "cs" },
     { name: "FAISS (Vector Database)", category: "cs" },
