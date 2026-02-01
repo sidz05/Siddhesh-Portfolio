@@ -50,38 +50,20 @@ const Projects: React.FC = () => {
       ]
     },
     {
-  id: 'portfolio',
-  title: 'Personal Portfolio',
-  description:
-    'A modern, responsive portfolio website showcasing my projects, skills, and achievements with dynamic animations and dark mode support.',
-  technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-  // Replace with your actual photo path (can be in /public or external link)
-  image: '/my-photo.jpg',  
-  link: 'https://siddhesh-portfolio-five.vercel.app/#home',
-  github: 'https://github.com/sidz05/Siddhesh-Portfolio',
-  features: [
-    'Responsive design with dark mode support',
-    'Dynamic typing animations and counters',
-    'Smooth scrolling navigation',
-    'Contact form with EmailJS integration',
-    'Modern UI with Tailwind CSS'
-  ]
-},
-
-    {
-      id: 'goshop',
-      title: 'GoShop',
+      id: 'portfolio',
+      title: 'Personal Portfolio',
       description:
-        'A real-time price comparison platform that integrates APIs from Amazon, Flipkart, and Shopify to fetch and compare live product prices.',
-      technologies: ['HTML', 'CSS', 'JavaScript', 'Node.js', 'MongoDB'],
-      image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg',
-      github: 'https://github.com/sidz05/goshop',
+        'A modern, responsive portfolio website showcasing my projects, skills, and achievements with dynamic animations and dark mode support.',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+      image: '/my-photo.jpg',  
+      link: 'https://siddhesh-portfolio-five.vercel.app/#home',
+      github: 'https://github.com/sidz05/Siddhesh-Portfolio',
       features: [
-        'Live price comparison across multiple platforms',
-        'Price history tracking and alerts',
-        'Product search and filtering',
-        'Optimized MongoDB queries reducing latency by 30%',
-        'Responsive UI/UX design'
+        'Responsive design with dark mode support',
+        'Dynamic typing animations and counters',
+        'Smooth scrolling navigation',
+        'Contact form with EmailJS integration',
+        'Modern UI with Tailwind CSS'
       ]
     }
   ];
@@ -94,42 +76,16 @@ const Projects: React.FC = () => {
         </h2>
         <div className="w-20 h-1 bg-teal-500 mx-auto mb-12"></div>
         
-        {/* Custom grid for placement */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Coding Mistake Mentor → left */}
-          <ProjectCard 
-            project={projects[0]} 
-            activeProject={activeProject} 
-            setActiveProject={setActiveProject} 
-          />
-
-          {/* EV Hub → center */}
-          <ProjectCard 
-            project={projects[1]} 
-            activeProject={activeProject} 
-            setActiveProject={setActiveProject} 
-          />
-
-          {/* Portfolio → right */}
-          <ProjectCard 
-            project={projects[2]} 
-            activeProject={activeProject} 
-            setActiveProject={setActiveProject} 
-          />
-        </div>
-        
-        {/* Second row for remaining projects */}
-        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8 justify-center">
-          {/* GoShop → left */}
-          <div className="flex justify-center">
-            <div className="w-full max-w-md">
-              <ProjectCard 
-                project={projects[3]} 
-                activeProject={activeProject} 
-                setActiveProject={setActiveProject} 
-              />
-            </div>
-          </div>
+        {/* Uniform grid for all three projects */}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {projects.map((project) => (
+            <ProjectCard 
+              key={project.id}
+              project={project} 
+              activeProject={activeProject} 
+              setActiveProject={setActiveProject} 
+            />
+          ))}
         </div>
       </div>
     </section>
@@ -145,12 +101,11 @@ interface CardProps {
 const ProjectCard: React.FC<CardProps> = ({ project, activeProject, setActiveProject }) => {
   return (
     <div 
-      key={project.id}
-      className="bg-gray-900 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group border border-gray-800 hover:border-teal-500"
+      className="bg-gray-900 rounded-xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group border border-gray-800 hover:border-teal-500 flex flex-col h-full"
     >
       {/* Image with hover overlay */}
       <div 
-        className="h-60 overflow-hidden relative"
+        className="h-48 overflow-hidden relative flex-shrink-0"
         onMouseEnter={() => setActiveProject(project.id)}
         onMouseLeave={() => setActiveProject(null)}
       >
@@ -190,26 +145,26 @@ const ProjectCard: React.FC<CardProps> = ({ project, activeProject, setActivePro
       </div>
       
       {/* Text content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-        <p className="text-gray-400 mb-4">{project.description}</p>
+        <p className="text-gray-400 mb-4 text-sm leading-relaxed">{project.description}</p>
         
         <div className="mb-4">
           <h4 className="text-sm font-semibold text-gray-300 mb-2">Key Features:</h4>
           <ul className="space-y-1">
             {project.features.slice(0, 3).map((feature, index) => (
-              <li key={index} className="text-gray-400 text-sm flex items-start">
+              <li key={index} className="text-gray-400 text-xs flex items-start">
                 <span className="text-teal-400 mr-2">•</span> {feature}
               </li>
             ))}
           </ul>
         </div>
         
-        <div className="flex flex-wrap gap-2 mt-4">
+        <div className="flex flex-wrap gap-2 mt-auto">
           {project.technologies.map((tech) => (
             <span 
               key={tech}
-              className="px-3 py-1 bg-gray-800 text-gray-300 rounded-full text-xs border border-gray-700"
+              className="px-2 py-1 bg-gray-800 text-gray-300 rounded-full text-xs border border-gray-700"
             >
               {tech}
             </span>
