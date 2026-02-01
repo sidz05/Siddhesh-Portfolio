@@ -22,7 +22,7 @@ const Hero: React.FC = () => {
     "Development Enthusiast",
     "Problem Solver",
     "Machine Learning Enthusiast",
-    "Computer Networks Specialist",
+    "Aspiring AI Engineer | LLM & RAG Application Developer",
   ];
 
   // Name typing effect

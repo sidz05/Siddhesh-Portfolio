@@ -17,6 +17,22 @@ const Projects: React.FC = () => {
   
   const projects: Project[] = [
     {
+      id: 'coding-mistake-mentor',
+      title: 'Coding Mistake Mentor– RAG-Based AI Assistant',
+      description:
+        'A Retrieval-Augmented Generation (RAG) system that helps students debug coding mistakes by retrieving similar past errors from a custom knowledge base using FAISS vector search.',
+      technologies: ['Python', 'RAG', 'LangChain', 'FAISS', 'HuggingFace', 'TinyLlama', 'Streamlit'],
+      image: 'https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg',
+      github: 'https://github.com/sidz05/coding-mistake-mentor',
+      features: [
+        'RAG system with FAISS vector search for similar error retrieval',
+        'LangChain integration with HuggingFace sentence-transformer embeddings',
+        'Local LLM deployment (TinyLlama via llama.cpp) without paid APIs',
+        'Interactive Streamlit chat interface with session-based memory',
+        'Context-aware explanations based on stored mistake data'
+      ]
+    },
+    {
       id: 'ev-hub',
       title: 'EV-Hub',
       description:
@@ -80,26 +96,40 @@ const Projects: React.FC = () => {
         
         {/* Custom grid for placement */}
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* EV Hub → left */}
+          {/* Coding Mistake Mentor → left */}
           <ProjectCard 
             project={projects[0]} 
             activeProject={activeProject} 
             setActiveProject={setActiveProject} 
           />
 
-          {/* Portfolio → center */}
+          {/* EV Hub → center */}
           <ProjectCard 
             project={projects[1]} 
             activeProject={activeProject} 
             setActiveProject={setActiveProject} 
           />
 
-          {/* GoShop → right */}
+          {/* Portfolio → right */}
           <ProjectCard 
             project={projects[2]} 
             activeProject={activeProject} 
             setActiveProject={setActiveProject} 
           />
+        </div>
+        
+        {/* Second row for remaining projects */}
+        <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8 justify-center">
+          {/* GoShop → left */}
+          <div className="flex justify-center">
+            <div className="w-full max-w-md">
+              <ProjectCard 
+                project={projects[3]} 
+                activeProject={activeProject} 
+                setActiveProject={setActiveProject} 
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

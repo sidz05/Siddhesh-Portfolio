@@ -51,11 +51,19 @@ const Skills: React.FC = () => {
     { name: "Machine Learning", category: "cs" },
     { name: "Software Methodology", category: "cs" },
     { name: "Git/GitHub", category: "tools" },
+    { name: "GitHub", category: "tools" },
     { name: "VS Code", category: "tools" },
     { name: "Postman", category: "tools" },
     { name: "Linux", category: "tools" },
     { name: "Docker", category: "tools" },
     { name: "AWS (Amazon Web Services)", category: "tools" },
+    { name: "AWS EC2", category: "tools" },
+    { name: "AWS S3", category: "tools" },
+    { name: "AWS RDS", category: "tools" },
+    { name: "Retrieval-Augmented Generation (RAG)", category: "cs" },
+    { name: "LangChain", category: "cs" },
+    { name: "FAISS (Vector Database)", category: "cs" },
+    { name: "HuggingFace Embeddings", category: "cs" },
     { name: "Problem Solving", category: "soft" },
     { name: "Team Leadership", category: "soft" },
     { name: "Communication", category: "soft" },
@@ -106,6 +114,12 @@ const Skills: React.FC = () => {
       color: "yellow",
     },
     {
+      id: "cloud",
+      label: "Cloud & DevOps",
+      icon: <Cpu className="w-5 h-5" />,
+      color: "indigo",
+    },
+    {
       id: "soft",
       label: "Soft Skills",
       icon: <Users className="w-5 h-5" />,
@@ -132,6 +146,7 @@ const Skills: React.FC = () => {
       yellow:
         "bg-yellow-500/10 border-yellow-500/30 text-yellow-400 hover:bg-yellow-500/20 hover:border-yellow-500",
       pink: "bg-pink-500/10 border-pink-500/30 text-pink-400 hover:bg-pink-500/20 hover:border-pink-500",
+      indigo: "bg-indigo-500/10 border-indigo-500/30 text-indigo-400 hover:bg-indigo-500/20 hover:border-indigo-500",
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.teal;
   };
@@ -146,6 +161,7 @@ const Skills: React.FC = () => {
       red: "bg-red-500 text-white border-red-500",
       yellow: "bg-yellow-500 text-black border-yellow-500",
       pink: "bg-pink-500 text-white border-pink-500",
+      indigo: "bg-indigo-500 text-white border-indigo-500",
     };
     return colorMap[color as keyof typeof colorMap] || colorMap.teal;
   };

@@ -32,7 +32,7 @@ const Education: React.FC = () => {
       location: 'Maharashtra',
       period: '2022',
       grade: 'Percentile: 98.30',
-      details: 'Secured 98.30 percentile in MHT-CET, qualifying for admission to top engineering colleges in Maharashtra.',
+      details: 'Secured 98.30 percentile in MHT-CET. Pursuing B.Tech From Pimpri Chinchwad College of Engineering, Pune.',
       level: 'entrance'
     },
     {
