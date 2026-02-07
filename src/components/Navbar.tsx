@@ -57,7 +57,7 @@ const Navbar: React.FC = () => {
           isScrolled
             ? 'bg-black/80 backdrop-blur-md border border-gray-700'
             : 'bg-black/60 backdrop-blur-sm'
-        } w-[90%] md:w-[70%]`}
+        } w-[90%] md:w-[70%] max-w-4xl`}
       >
         {/* Logo */}
         <a
