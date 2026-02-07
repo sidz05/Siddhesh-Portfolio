@@ -66,7 +66,7 @@ const Hero: React.FC = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center text-white relative overflow-hidden pt-20"
+      className="min-h-screen flex items-center justify-center text-white relative overflow-hidden pt-32"
     >
 
       {/* Floating icons */}
@@ -104,10 +104,10 @@ const Hero: React.FC = () => {
         <Linkedin className="text-white" size={24} />
       </div>
 
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-8">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-gray-800 rounded-full text-sm text-gray-300 mb-6 sm:mb-8 border border-gray-700">
+          <div className="inline-flex items-center px-4 py-2 bg-gray-800 rounded-full text-sm text-gray-300 mb-8 border border-gray-700">
             <span className="w-2 h-2 bg-teal-500 rounded-full mr-2 animate-pulse"></span>
             Available for opportunities! Let's connect
           </div>
