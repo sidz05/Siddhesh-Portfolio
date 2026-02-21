@@ -25,7 +25,7 @@ const Achievements: React.FC = () => {
     {
       id: 'codechef-4star',
       title: 'CodeChef 4-Star Rating Achievement',
-      description: 'Achieved a CodeChef rating of 1867 (4-Star, Div 2) with a global rank of 4,207 and India rank of 3,280, competing in contests with over 10,000 participants.',
+      description: 'Achieved a CodeChef rating of 1867 (4-Star, Div 2) with a global rank of 4,207 and India rank of 3,280. Solved 200+ Data Structures and Algorithms problems across platforms.',
       icon: <Code className="text-teal-400" size={24} />,
       category: 'technical',
       date: '2024'
@@ -57,7 +57,7 @@ const Achievements: React.FC = () => {
     {
       id: 'smart-india-hackathon',
       title: 'Smart India Hackathon - College Level Rank 11',
-      description: 'Smart-India hackathon Rank in College Level is 11.',
+      description: 'Ranked 11th among 100+ teams in the Smart India Hackathon internal selection round.',
       icon: <Code className="text-teal-400" size={24} />,
       category: 'technical',
       date: '2024'
@@ -81,7 +81,7 @@ const Achievements: React.FC = () => {
     {
       id: 'iste-vp',
       title: 'Vice President, ISTE Students\' Chapter',
-      description: 'Elected Vice President, ISTE Students\' Chapter, PCCOE – Managed 10+ technical/non-technical events, including a UI Hackathon with 150+ participants, and led 20+ members to enhance student engagement and chapter membership.',
+      description: 'Served as Vice President, ISTE Students\' Chapter – led 10+ technical events, recruited 300+ members, and grew engagement by 40%.',
       icon: <Users className="text-teal-400" size={24} />,
       category: 'personal',
       date: '2024'
@@ -89,7 +89,7 @@ const Achievements: React.FC = () => {
     {
       id: 'acm-membership',
       title: 'Membership Chair, PCCOE ACM Student Chapter',
-      description: 'Elected Membership Chair, PCCOE ACM Student Chapter – Recruited 300+ members as ACM India Membership Ambassador, drove 100+ new sign-ups in one quarter, and built 50+ industry connections to strengthen collaborations.',
+      description: 'Served as Membership Chair, ACM Student Chapter – led 10+ technical events, recruited 300+ members, and grew engagement by 40%.',
       icon: <Users className="text-teal-400" size={24} />,
       category: 'personal',
       date: '2024'

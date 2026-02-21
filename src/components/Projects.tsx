@@ -34,36 +34,30 @@ const Projects: React.FC = () => {
     },
     {
       id: 'ev-hub',
-      title: 'EV-Hub',
+      title: 'EV-Hub – Centralized EV Charging Network System',
       description:
-        'A web platform for electric vehicle users to discover, book, and manage charging station reservations in real-time with secure payment processing.',
-      technologies: ['Node.js', 'React', 'JavaScript', 'Machine Learning', 'MongoDB'],
+        'A full-stack EV charging platform enabling users to discover, book, and navigate to charging stations with real-time availability and map integration.',
+      technologies: ['React', 'Node.js', 'SQL', 'MongoDB', 'Machine Learning'],
       image: 'https://tru-vumonitors.com/wp-content/uploads/2023/02/EV-Charging-Touchscreen-scaled.jpg',
       link: 'https://evhub-pro.vercel.app/',
       github: 'https://github.com/sidz05/EV_HUB-Fuel_Predition.git',
       features: [
-        'Real-time charging station availability tracking',
-        'Secure booking and payment system',
-        'User reviews and ratings',
-        'Geolocation-based search algorithm',
-        'Responsive design for all devices'
+        'Real-time availability tracking and map integration',
+        'KNN, Linear Regression, and Decision Trees for optimization',
+        'Secure backend workflows with slot-based scheduling and payments'
       ]
     },
     {
-      id: 'portfolio',
-      title: 'Personal Portfolio',
+      id: 'email-alias',
+      title: 'Email Alias Generation & Management System',
       description:
-        'A modern, responsive portfolio website showcasing my projects, skills, and achievements with dynamic animations and dark mode support.',
-      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
-      image: '/my-photo.jpg',  
-      link: 'https://siddhesh-portfolio-five.vercel.app/#home',
-      github: 'https://github.com/sidz05/Siddhesh-Portfolio',
+        'A cloud-based email aliasing system deployed on AWS EC2 that generates multiple aliases using probabilistic and combinational logic.',
+      technologies: ['AWS EC2', 'AWS RDS', 'AWS S3', 'MySQL', 'Cloud Computing'],
+      image: 'https://images.pexels.com/photos/1181675/pexels-photo-1181675.jpeg',
       features: [
-        'Responsive design with dark mode support',
-        'Dynamic typing animations and counters',
-        'Smooth scrolling navigation',
-        'Contact form with EmailJS integration',
-        'Modern UI with Tailwind CSS'
+        'Probabilistic and combinational logic for alias generation',
+        'AWS RDS (MySQL) for user data and S3 for alias records',
+        'Auto Scaling for EC2 and RDS with Security Groups'
       ]
     }
   ];

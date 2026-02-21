@@ -128,12 +128,12 @@ const About: React.FC = () => {
 
             <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-teal-500 transition-all duration-300">
               <Counter end={5} duration={2500} suffix="+" />
-              <p className="text-gray-300">Projects Completed</p>
+              <p className="text-gray-300">Major Projects</p>
             </div>
 
             <div className="bg-gray-900 rounded-xl p-6 border border-gray-700 hover:border-teal-500 transition-all duration-300">
-              <Counter end={10} duration={3000} suffix="+" />
-              <p className="text-gray-300">Events Organized</p>
+              <Counter end={200} duration={3000} suffix="+" />
+              <p className="text-gray-300">DSA Problems Solved</p>
             </div>
           </div>
         </div>
