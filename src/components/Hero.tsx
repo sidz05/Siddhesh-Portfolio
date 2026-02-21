@@ -218,7 +218,7 @@ const Hero: React.FC = () => {
             </button>
             {/* Resume Iframe */}
             <iframe
-              src="/resume.pdf"
+              src="/Siddhesh_S_Patil_(1).pdf"
               title="Resume"
               className="w-full h-full rounded-xl"
             />
